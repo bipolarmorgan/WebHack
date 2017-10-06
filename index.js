@@ -17,6 +17,9 @@ function onCommand(input) {
     switch (command) {
         case '':
             break;
+        case 'pwd':
+            terminal.writeLine(`/${currentDirectory.join('/')}`);
+            break;
         case 'cd':
             if (parts[1] === '..') {
                 currentDirectory.pop();

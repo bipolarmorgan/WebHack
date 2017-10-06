@@ -1,9 +1,9 @@
 module.exports = (function () {
     function getIntro () {
         return [
-            '**********************************',
-            '* Welcome to Hello World Hacking *',
-            '**********************************',
+            '**************************',
+            '* Welcome to Hello World *',
+            '**************************',
             '',
             'For your first mission, navigate to your home directory and upload your public',
             'key to the compromised server.',
