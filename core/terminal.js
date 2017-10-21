@@ -24,7 +24,13 @@ module.exports = function (commandCallback) {
         }
 
         if (e.key === 'Backspace') {
+            if (!readBuffer) {
+                return;
+            }
+
             terminal.write('\b \b');
+
+            readBuffer = readBuffer.substring(0, readBuffer.length - 1);
         } else if(e.key === 'Enter') {
             writeLine();
             commandCallback(readBuffer);

@@ -4,10 +4,16 @@
   "main": "index.js",
   "license": "MIT",
   "private": true,
+  "scripts": {
+    "dev": "webpack-dev-server --watch --hot --progress --colors",
+    "test": "jest ."
+  },
   "dependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.0",
     "css-loader": "^0.28.7",
+    "jest": "^21.2.1",
     "normalize.css": "^7.0.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",

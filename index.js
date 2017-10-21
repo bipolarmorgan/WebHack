@@ -2,10 +2,13 @@ require('xterm/dist/xterm.css');
 require('normalize.css');
 require('./site.css');
 
-const Terminal = require('./terminal');
+const Terminal = require('./core/terminal');
+
 const terminal = new Terminal(onCommand);
 
 const scenario = require('./scenarios/helloworld'); // TODO: Dynamic somehow..?
+
+const commands = require('./commands');
 
 let currentDirectory = ['var'];
 let directoryStructure = scenario.getDirectoryStructure();
@@ -36,20 +39,9 @@ function onCommand(input) {
     acceptCommand();
 }
 
-function directoryExists() {
-
-}
-
 function acceptCommand() {
     terminal.write(`root> /${currentDirectory.join('/')} # `);
 }
-
-terminal.writeLines([
-    '',
-    'Initialize kernel...',
-    'Linuz /init.rd-2.4.3',
-    ''
-]);
 
 terminal.writeLines(scenario.getIntro());
 

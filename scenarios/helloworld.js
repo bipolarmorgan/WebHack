@@ -1,6 +1,21 @@
+const utils = require('../utils');
+
 module.exports = (function () {
+    const server = {
+        ip: randomIp(),
+        sshText: 'Welcome to Hello World Inc.'
+    }
+
+    function getServers() {
+        return [server]
+    }
+
     function getIntro () {
         return [
+            '',
+            'Initialize kernel...',
+            'Linuz /init.rd-2.4.3',
+            '',
             '**************************',
             '* Welcome to Hello World *',
             '**************************',
@@ -17,7 +32,7 @@ module.exports = (function () {
             'home': {
                 alias: '~',
                 files: [
-                    { name: 'servers.txt', contents: 'compromised: 194.314.24.1' }
+                    { name: 'servers.txt', contents: `compromised:\n\t- ${server.ip}` }
                 ]
             }
         }

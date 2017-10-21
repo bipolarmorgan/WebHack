@@ -3,12 +3,7 @@ module.exports = function (structure) {
         return false;
     }
 
-    function deletePath(path) {
-        /* */
-    }
-
     return {
-        exists,
-        delete: deletePath
+        exists
     }
 };
